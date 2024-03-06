@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\MediaGenreController;
 use App\Http\Controllers\GenreController;
 use Illuminate\Http\Request;
@@ -26,6 +27,7 @@ Route::resource("movies", MovieController::class)->except(['create', 'edit']);
 
 Route::get('mediagenre', [ MediaGenreController::class, 'index']);
 Route::get('genre', [ GenreController::class, 'index']);
+Route::get('media', [ MediaController::class, 'index']);
 
 
 Route::get('users/{id}', [ UserController::class, 'show']);
