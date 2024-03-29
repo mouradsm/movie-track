@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource("movies", MovieController::class)->except(['create', 'edit']);
+Route::post('movies/value', [MovieController::class, 'moviesFiltered']); 
 
 Route::get('mediagenre', [ MediaGenreController::class, 'index']);
 Route::get('genre', [ GenreController::class, 'index']);

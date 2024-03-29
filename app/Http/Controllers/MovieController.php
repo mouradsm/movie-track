@@ -15,6 +15,14 @@ class MovieController extends Controller
         return Movie::with(['media'])->get();
     }
 
+    public function moviesFiltered(Request $request){
+        $value = $request->input('value');
+        $movies = Movie::where('duration', '<=', $value)->with(['media'])->get();
+        
+        return response()->json($movies);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
