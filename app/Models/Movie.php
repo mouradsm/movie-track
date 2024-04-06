@@ -15,7 +15,7 @@ class Movie extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['title','description','cover','release_date', 'duration'];
-
+    public $hidden = ['deleted_at'];
     public function media(): MorphOne
     {
         return $this->morphOne(Media::class, 'mediable');

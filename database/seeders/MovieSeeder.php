@@ -18,8 +18,6 @@ class MovieSeeder extends Seeder
     {
         $movie=Movie::factory()->create();
 
-        $movie->media()->create(
-            Media::factory()->make()->toArray()
-        );
+        $movie->media()->create(Media::factory()->make()->toArray());
     }
 }
